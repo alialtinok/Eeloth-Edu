@@ -18,7 +18,8 @@
     "express": "^4.17.3",
     "mongoose": "^6.2.9",
     "mongose": "^0.0.2-security",
-    "prettierr": "^1.15.3-dev"
+    "prettierr": "^1.15.3-dev",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
