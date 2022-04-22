@@ -17,16 +17,16 @@ exports.createUser = async (req, res) => {
 exports.loginUser =  (req, res) => {
   try {
     const { email, password } = req.body;
-
-     User.findOne({ email: email }, (err, user) => {
+     User.findOne({ email }, (err, user) => {
       if (user) {
         bcrypt.compare(password, user.password, (err, same) => {
           if (same) {
-            res.status(200).send('You are logged in');
+            // USER SESSION
+            req.session.userId = user._id;
+            res.status(200).redirect('/');
           }
         });
       }
-
     });
   } catch (error) {
     res.status(400).json({
@@ -35,3 +35,9 @@ exports.loginUser =  (req, res) => {
     });
   }
 };
+
+exports.logoutUser = (req,res) => {
+  req.session.destroy(err => {
+    res.redirect('/');
+  });
+}
