@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo');  
 
 const pageRoute = require('./routes/pageRoute');
 const courseRoute = require('./routes/courseRoute');
@@ -40,7 +40,7 @@ app.use(session({
 }))
 
 //Routes
-app.use('*',(req, res, next) => {
+app.use('*', (req, res, next) => {
   userIN = req.session.userId;
   next();
 });

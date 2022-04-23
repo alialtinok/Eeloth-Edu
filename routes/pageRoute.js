@@ -9,3 +9,4 @@ router.route('/about').get(pageController.getAboutPage);
 router.route('/register').get(redirectMiddleware, pageController.getRegisterPage);  //Giriş yapıldıktan sonra login veya anasayfaya endpoint yoluyla
 router.route('/login').get(redirectMiddleware, pageController.getLoginPage); //  yönlenmeyi engellemek redirectMiddleware kullanıldı.
 module.exports = router;
+
