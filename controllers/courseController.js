@@ -5,7 +5,7 @@ exports.createCourse = async (req, res) => {
   try {
     const course = await Course.create({
       name: req.body.name,
-      description: req.body.name,
+      description: req.body.description,
       category: req.body.category,
       user: req.session.userID,
     });
