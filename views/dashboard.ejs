@@ -162,27 +162,25 @@ if(user) { %> <% if(user.role ==='student') { %>
     </div>
     <!-- end row -->
     <div class="row mt-5">
+		<% for (let i=0; i< courses.length; i++) { %>
+
       <div class="col-lg-6 col-md-6 col-12">
         <div class="course-item mb-5">
           <div class="image-blog">
-            <img src="images/blog_1.jpg" alt="" class="img-fluid" />
+            <img src="/images/blog_1.jpg" alt="" class="img-fluid" />
           </div>
           <div class="course-br">
             <div class="course-title">
-              <h2><a href="course-single.html" title="">Engineering</a></h2>
+			<h2><a href="/courses/<%= courses[i].slug %>" title=""><%= courses[i].name %></a></h2>
             </div>
             <div class="course-desc">
-              <p>
-                Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo
-                maiorum intel ogrets geuiat operts elicata libere avisse id
-                cumlegebat, liber regione eu sit....
-              </p>
+				<p><%= courses[i].description %> </p>
             </div>
           </div>
         </div>
       </div>
       <!-- end col -->
-
+	  <% } %>
     </div>
     <!-- end row -->
   </div>
